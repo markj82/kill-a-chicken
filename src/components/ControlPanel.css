@@ -6,7 +6,7 @@ h2 {
     display: inline;
 }
 
-button {
+#play {
     height: 40px;
     background: 0%;
     border: 2px solid rgb(55, 243, 49);
@@ -15,5 +15,17 @@ button {
     padding-left: 20px;
     padding-right: 20px;
     margin-right: 80px;
+    outline: 0;
+}
+
+#levels {
+    height: 40px;
+    background: 0%;
+    border: 2px solid rgb(168, 81, 81);
+    font-size: 25px;
+    font-weight: 400;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right: 60px;
     outline: 0;
 }

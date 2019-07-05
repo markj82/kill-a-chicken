@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Table from './Table'
 import ControlPanel from './ControlPanel'
+import chickenSound from '../sounds/chicken-sound.mp3'
 
 class App extends React.Component {
 
@@ -23,7 +24,9 @@ class App extends React.Component {
       {id: 'n', isVisible: false},
       {id: 'o', isVisible: false},
       {id: 'p', isVisible: false}
-    ]
+    ],
+    points: 0,
+    level: 800
   }
   handleChickenHit = event => {
     const newChickens = [...this.state.allChickens]
@@ -31,8 +34,11 @@ class App extends React.Component {
     const index = newChickens.findIndex(chicken => chicken.id === id)
     newChickens[index] = {id:id, isVisible: false} 
     this.setState({
-      allChickens: newChickens
+      allChickens: newChickens,
+      points: this.state.points + 1
     })
+    // play the sound
+    // chickenSound.play()
   }
   chickenGenerator = () => {
     const newChickens = [...this.state.allChickens]
@@ -41,17 +47,31 @@ class App extends React.Component {
     this.setState({
       allChickens: newChickens
     })
+    setTimeout(() => {
+      newChickens[randomIndex].isVisible = false
+      this.setState({
+        allChickens: newChickens
+      })
+    },2000)
   }
 
   handleGame = () => {
-    console.log("game")
-    setInterval(this.chickenGenerator, 800)
+    setInterval(this.chickenGenerator, this.state.level)
+  }
+
+  handleLevel = event => {
+    console.log(event.target)
+    if(event.target.value === "Easy") {
+      this.setState({
+        level: 4000
+      })
+    }
   }
 
   render() {
     return (
       <div className="App">
-        <ControlPanel clicked={this.handleGame}/>
+        <ControlPanel clicked={this.handleGame} score={this.state.points} levelChoose={this.handleLevel}/>
         <Table hit={this.handleChickenHit} data={this.state.allChickens}/>
       </div>
     );
