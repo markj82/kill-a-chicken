@@ -1,0 +1,19 @@
+#control-panel {
+    background: rgb(245, 241, 187);
+}
+
+h2 {
+    display: inline;
+}
+
+button {
+    height: 40px;
+    background: 0%;
+    border: 2px solid rgb(55, 243, 49);
+    font-size: 30px;
+    font-weight: 600;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-right: 80px;
+    outline: 0;
+}
