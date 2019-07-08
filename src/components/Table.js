@@ -1,9 +1,8 @@
 import React from 'react'
 import './Table.css'
-import chicken from '../local-img/chicken1.png'
+import chicken from '../local-img/chicken3.png'
 
 const Table = props => {
-    console.log(props.data)
     return (
         <table>
             <tbody>

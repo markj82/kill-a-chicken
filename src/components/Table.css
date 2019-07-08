@@ -1,24 +1,11 @@
 table {
     width: 100%;
     table-layout: fixed;
+    /* cursor: cell; */
+    cursor: url('../local-img/mace.png');
+    cursor: url('/images/cows.gif');
 }
 
 tr {
-    height: 130px;
+    height: 160px;
 }
-
-/* #a {
-    background: red;
-}
-
-#b {
-    background: green;
-}
-#m {
-    background: rgb(75, 104, 165);
-}
-#l {
-    background: rgb(3, 85, 3);
-} */
-
-
