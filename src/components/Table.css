@@ -2,10 +2,13 @@ table {
     width: 100%;
     table-layout: fixed;
     /* cursor: cell; */
-    cursor: url('../local-img/mace.png');
-    cursor: url('/images/cows.gif');
+    /* cursor: url('../local-img/mace.svg'), auto; */
+    /* cursor: url('/images/mace.svg'); */
+    /* cursor: url('/images/logo.svg'), auto; */
+    cursor: url('../local-img/gun.svg'), auto;
+    
 }
 
 tr {
-    height: 160px;
+    height: 180px;
 }

@@ -1,0 +1,22 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 10 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+    <g transform="matrix(0.0273556,0,0,0.0273556,-16.4134,-35.8359)">
+        <clipPath id="_clip1">
+            <rect x="671" y="1310" width="228" height="329"/>
+        </clipPath>
+        <g clip-path="url(#_clip1)">
+            <clipPath id="_clip2">
+                <rect x="671" y="1310" width="228" height="329"/>
+            </clipPath>
+            <g clip-path="url(#_clip2)">
+                <g transform="matrix(36.5556,-0,-0,36.5556,600,1310)">
+                    <use xlink:href="#_Image3" x="1.942" y="0" width="6.237px" height="9px"/>
+                </g>
+            </g>
+        </g>
+    </g>
+    <defs>
+        <image id="_Image3" width="7px" height="9px" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAJCAYAAAD+WDajAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAA+0lEQVQYlV3JsUrDQBwH4N//klhDcqklSCuoESpacavo5FBEijgUnKwOPoCDr+Diy/gE4iMI6lSkQm2iYsEOwWKuV5tczs3Bb/0IAJrNAwPAlVKqLaXsdLtPrTiONQMAl3PmunyTiG7W1mtBtbq6CAAMAIQQEGPhGIYZjcW3nuPO4V+G/Zey1ppUNo3zr+jON0bbAGAen5wSgS6KnleLwnC34uTPnl04A1A0cpW1G429yyBY8UFYGL71HjaWS/tpmj0yKeXtYPCRJYnIRSLuw8/R++Qns5fm+REBKFiWRb7vb9m2zXaC2V655LzOmGxI+Oe8VfegcT2ZppVfJSleWMvIXZ4AAAAASUVORK5CYII="/>
+    </defs>
+</svg>

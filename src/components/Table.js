@@ -4,7 +4,7 @@ import chicken from '../local-img/chicken3.png'
 
 const Table = props => {
     return (
-        <table>
+        <table onClick={props.clickPointer}>
             <tbody>
         <tr>
             <th><img id="a" onClick={props.hit} src={props.data[0].isVisible && chicken} width='130'></img></th>

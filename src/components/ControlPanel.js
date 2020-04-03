@@ -1,4 +1,5 @@
 import React from 'react'
+import Modal from './Modal/Modal'
 import './ControlPanel.css'
 
 const ControlPanel = props => {
@@ -57,7 +58,9 @@ const ControlPanel = props => {
             </button>
             <h2 id="points-score">Points: {props.score}</h2>
             <h2 id="count-down">Time Left: {props.timeLeft > 9 ? props.timeLeft : `0${props.timeLeft}`}s</h2>
+
             {/* <button onClick={props.test}>test</button> */}
+            <Modal />
         </div>
      );
 }

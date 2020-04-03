@@ -1,0 +1,73 @@
+.modal {
+    font-size: 28px;
+    background: rgb(179, 255, 0);
+    border: 2px solid black;
+    
+  }
+.modal > .header {
+    width: 100%;
+    font-size: 36px;
+    font-weight: 800;
+    text-align: center;
+    padding: 5px;
+  }
+.modal > .content {
+    width: 100%;
+    padding: 10px 5px;
+  }
+.modal > .actions {
+    width: 100%;
+    padding: 10px 5px;
+    margin: auto;
+    text-align: center;
+  }
+.modal > .close {
+    cursor: pointer;
+    position: absolute;
+    display: block;
+    padding: 20px 20px;
+    line-height: 20px;
+    right: -30px;
+    top: -30px;
+    font-size: 34px;
+    background: #d16b6b;
+    border-radius: 38px;
+    border: 4px solid #830909;
+}
+
+.button {
+    background: rgb(150, 135, 233);
+    font-size: 20px;
+    border-radius: 50px
+}
+
+#start-button {
+    background: rgb(235, 52, 52);
+    margin-right: 60px;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+#quit-button {
+    background: rgb(0, 174, 255);
+    font-size: 28px;
+    font-weight: 700;
+}
+
+#join-button {
+    font-size: 20px;
+    margin-left: 40px;
+    margin-bottom: 30px;
+    border-radius: 50px;
+    background: pink;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+#input-name {
+    height: 30px;
+    font-size: 28px;
+    font-weight: 700;
+    background: rgb(217, 230, 102);
+    outline: none;
+}

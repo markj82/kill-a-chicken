@@ -1,22 +1,16 @@
-import React from 'react'
-import Sound from 'react-sound'
+// import React from 'react';
+// import { Howl } from 'howler';
+// import sound1 from '../sounds/chicken1.mp3';
 
-class MakeSound extends Component {
-    state = { 
+// const Sound = () => {
+//   function playSound() {
+//     const sound = new Howl({
+//       src: sound1,
+//     });
+//     sound.play();
+//   }
 
-    }
-    render() { 
-        return ( 
-        <Sound
-          url='../sounds/chicken-sound.mp3'
-          playStatus={Sound.status.PLAYING}
-          playFromPosition={300 /* in milliseconds */}
-          onLoading={this.handleSongLoading}
-          onPlaying={this.handleSongPlaying}
-          onFinishedPlaying={this.handleSongFinishedPlaying}
-        />
-         );
-    }
-}
- 
-export default MakeSound;
+//   return <button onClick={playSound}>Play</button>;
+// };
+
+// export default Sound;

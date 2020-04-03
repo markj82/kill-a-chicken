@@ -3,14 +3,38 @@ import './App.css';
 import Table from './Table'
 import ControlPanel from './ControlPanel'
 
+import { Howl } from 'howler';
+import chickenHit from '../sounds/chicken-hit.mp3';
+import weaponHit from '../sounds/weapon-hit.mp3';
+import gameAction from '../sounds/game-action.mp3';
+import backgroundCalm from '../sounds/background-calm.mp3';
+
 import space from '../local-img/space.gif'
 import sea from '../local-img/sea.gif'
 import cows from '../local-img/cows.gif'
 
-
-// import chickenSound from '../sounds/chicken-sound.mp3'
+import MyModal from '../components/Modal/Modal'
 
 class App extends React.Component {
+
+  // SOUNDS
+  soundWeaponHit = new Howl({
+    src: weaponHit
+  });
+
+  soundChickenHit = new Howl({
+    src: chickenHit
+  });
+
+  musicBackground = new Howl({
+    src: backgroundCalm,
+    volume: 0.2
+  })
+
+  musicGameAction = new Howl({
+    src: gameAction,
+    volume: 0.2
+  })
 
   state = {
     myStyle: {
@@ -43,8 +67,10 @@ class App extends React.Component {
     points: 0,
     level: 2000,
     hideLevel: 2000,
-    timeLeft: 30
+    timeLeft: 30,
+    show: false
   }
+
 
   handleChickenHit = event => {
     const newChickens = [...this.state.allChickens]
@@ -55,11 +81,14 @@ class App extends React.Component {
       allChickens: newChickens,
       points: this.state.points + 1
     })
-    // play the sound here
-    // chickenSound.play()
+    this.soundChickenHit.play()
+    
   }
 
   chickenGenerator = () => {
+
+    // bug is here, chickenGenerator is still working.... i have to stop it
+    console.log(this.state.timeLeft)
     if(this.state.isGameActive && this.state.timeLeft > 0) {
       const newChickens = [...this.state.allChickens]
       const randomIndex = Math.floor(Math.random() * newChickens.length)
@@ -73,10 +102,18 @@ class App extends React.Component {
           allChickens: newChickens
         })
       },this.state.hideLevel)
+      this.musicBackground.stop();
+    } else {
+      this.musicGameAction.stop();
+      // this.musicBackground.play();  // not good, start playing every second.....
+
+      // show second modal = game over
     }
   }
 
+
   handleGameStart = () => {
+    this.musicGameAction.play()
     this.setState({
       isGameActive: true
     })
@@ -85,6 +122,8 @@ class App extends React.Component {
   }
 
   handleGameStop = () => {
+    this.musicGameAction.stop()
+    this.musicBackground.play()
     this.setState({
       isGameActive: false
     })
@@ -148,14 +187,12 @@ class App extends React.Component {
     }
   }
 
+
   // just testing things
-  // handleTest = () => {
-  //   const test = new Audio()
-    
-  //   console.log('test')
-  //   this.timer()
-  //   console.log(this.state.timeLeft)
-  // }
+  // modal
+  handleTest = () => {
+   console.log('test')
+  }
 
   handleChangeThemeSpace = () => {
     this.setState({
@@ -190,15 +227,21 @@ class App extends React.Component {
       },
     })
   }
-// <header className="masthead" style={{ backgroundImage: `url(${Background})` }} >
+
+  handleWeaponHit = () => {
+    console.log('bum!')
+    this.soundWeaponHit.play()
+  }
+
+  componentDidMount () {
+    this.musicBackground.play()
+  }
+
   render() {
-
-    
-
-
     return (
       <div className="App" style={ this.state.myStyle }>
         <ControlPanel
+
           clickedGameStart={this.handleGameStart}
           clickedGameStop={this.handleGameStop}
           clickedGameReset={this.handleGameReset}
@@ -212,13 +255,18 @@ class App extends React.Component {
           space={this.handleChangeThemeSpace}
           sea={this.handleChangeThemeSea}
         />
+       
         <Table
           hit={this.handleChickenHit}
           data={this.state.allChickens}
+          clickPointer={this.handleWeaponHit}
         />
         {/* <Player /> */}
+        <MyModal clickedGameStart={this.handleGameStart}/>
       </div>
     );
+
+  
   } 
 }
 
